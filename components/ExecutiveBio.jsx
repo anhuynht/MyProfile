@@ -69,16 +69,7 @@ export default function ExecutiveBio({ lang }) {
                 )}
               </p>
 
-              {/* Progress / Competency Bar like Nancy's Mockup */}
-              <div className="pt-2 space-y-2">
-                <div className="flex justify-between items-center text-xs font-bold font-ubuntu text-slate-800">
-                  <span>{lang === 'vi' ? 'Năng Lực Lãnh Đạo Chiến Lược & Chuyển Đổi Số' : 'Strategic Leadership & Digital Transformation'}</span>
-                  <span className="px-2 py-0.5 rounded-md bg-[#FF4F6E] text-white text-[10px]">98%</span>
-                </div>
-                <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-                  <div className="h-full bg-[#FF4F6E] rounded-full w-[98%]" />
-                </div>
-              </div>
+
             </div>
 
             {/* Quote Block with Teal Left Accent */}
