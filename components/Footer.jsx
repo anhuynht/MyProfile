@@ -67,10 +67,10 @@ export default function Footer({ lang, onOpenBooking, onOpenJD }) {
                 {lang === 'vi' ? profileData.titleVi : profileData.title}
               </p>
 
-              <p className="text-white/80 text-xs leading-relaxed max-w-sm font-roboto">
-                {lang === 'vi'
-                  ? 'Hồ sơ năng lực trực tuyến tích hợp Trí tuệ Nhân tạo hỗ trợ phân tích độ phù hợp với Job Description dành cho các Nhà Tuyển Dụng & Hội Đồng Quản Trị.'
-                  : 'Executive Portfolio & AI-Powered Candidate Matching Platform designed for Board of Directors and Executive Recruiters.'}
+              <p className="text-white/85 text-xs leading-relaxed max-w-md font-roboto italic">
+                &ldquo;{lang === 'vi'
+                  ? 'Chuyển đổi số thành công phụ thuộc vào con người, quy trình, năng lực lãnh đạo và sự thực thi kỷ luật cũng như công nghệ. Tôi xây dựng các kiến trúc tin cậy, có khả năng mở rộng nhằm trao quyền cho các đội ngũ kinh doanh và mở khóa lợi thế cạnh tranh bền vững.'
+                  : 'Successful digital transformation depends as much on people, processes, leadership, and disciplined execution as it does on technology. I build scalable, trusted architectures that empower business teams and unlock sustainable competitive advantage.'}&rdquo;
               </p>
 
               {/* Social Round Buttons */}
