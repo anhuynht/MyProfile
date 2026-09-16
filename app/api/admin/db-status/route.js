@@ -55,6 +55,13 @@ export async function GET(request) {
     }
   }
 
+  const availableKeys = Object.keys(process.env).filter(k => 
+    !k.toLowerCase().includes('secret') && 
+    !k.toLowerCase().includes('pass') && 
+    !k.toLowerCase().includes('token') &&
+    !k.toLowerCase().includes('key')
+  );
+
   return NextResponse.json({
     hasPostgresUrl: Boolean(rawUrl),
     maskedUrl,
@@ -62,6 +69,7 @@ export async function GET(request) {
     connectError,
     tables,
     rowCounts,
+    availableKeys,
     isServerless: Boolean(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME),
   });
 }
