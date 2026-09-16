@@ -26,11 +26,15 @@ export async function POST(request) {
 
     let extractedJDText = directText.trim();
     let filename = 'Direct Input';
+    let fileBase64 = null;
+    let fileType = null;
 
     if (file && typeof file === 'object' && file.name) {
       filename = file.name;
+      fileType = file.type || 'application/octet-stream';
       const arrayBuffer = await file.arrayBuffer();
       const buffer = Buffer.from(arrayBuffer);
+      fileBase64 = buffer.toString('base64');
       extractedJDText = await parseDocument(buffer, file.type, file.name);
     }
 
@@ -64,6 +68,8 @@ export async function POST(request) {
       matchScore,
       aiResult,
       ipAddress,
+      fileData: fileBase64,
+      fileType,
     });
 
     // Notify via email to an.huynht@gmail.com asynchronously

@@ -5,8 +5,17 @@ import Link from 'next/link';
 import { 
   ShieldCheck, Lock, Mail, Key, Sparkles, Calendar, FileText, 
   Settings, LogOut, Search, Eye, CheckCircle2, AlertCircle, 
-  Clock, RefreshCw, Server, Send, ChevronRight, User, Building2, Phone, ExternalLink
+  Clock, RefreshCw, Server, Send, ChevronRight, User, Building2, Phone, ExternalLink, Download
 } from 'lucide-react';
+
+function isBinaryOrJunkText(text) {
+  if (!text) return true;
+  if (text.startsWith('%PDF')) return true;
+  const sample = text.slice(0, 1000);
+  const nonPrintable = sample.match(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g);
+  if (nonPrintable && nonPrintable.length > 5) return true;
+  return false;
+}
 
 export default function AdminPage() {
   const [token, setToken] = useState(null);
@@ -563,7 +572,7 @@ export default function AdminPage() {
                             <div className="text-[11px] text-slate-500 font-roboto">{log.job_title || 'N/A'}</div>
                           </td>
                           <td className="py-3.5 px-4 text-slate-600 max-w-xs truncate font-medium">
-                            {log.jd_filename || 'Trực tiếp'}
+                            <span className="font-mono text-xs">{log.jd_filename || 'Trực tiếp'}</span>
                           </td>
                           <td className="py-3.5 px-4 text-center">
                             <span className={`px-2.5 py-1 rounded-full font-bold font-ubuntu text-xs ${
@@ -575,13 +584,25 @@ export default function AdminPage() {
                             </span>
                           </td>
                           <td className="py-3.5 px-4 text-right">
-                            <button
-                              onClick={() => setSelectedLog(log)}
-                              className="px-3 py-1 rounded-full bg-slate-50 border border-slate-200 text-slate-700 hover:text-[#009DAE] hover:border-[#009DAE] transition-colors inline-flex items-center space-x-1 font-bold font-ubuntu"
-                            >
-                              <Eye className="w-3.5 h-3.5" />
-                              <span className="text-[11px]">Xem</span>
-                            </button>
+                            <div className="inline-flex items-center gap-1.5 justify-end">
+                              <a
+                                href={`/api/admin/download-jd?id=${log.id}`}
+                                download
+                                title="Tải về file JD gốc"
+                                className="px-2.5 py-1 rounded-full bg-slate-50 border border-slate-200 text-slate-700 hover:text-[#009DAE] hover:border-[#009DAE] transition-colors inline-flex items-center space-x-1 font-bold font-ubuntu"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                <Download className="w-3.5 h-3.5 text-[#009DAE]" />
+                                <span className="text-[11px] hidden sm:inline">Tải JD</span>
+                              </a>
+                              <button
+                                onClick={() => setSelectedLog(log)}
+                                className="px-3 py-1 rounded-full bg-slate-50 border border-slate-200 text-slate-700 hover:text-[#009DAE] hover:border-[#009DAE] transition-colors inline-flex items-center space-x-1 font-bold font-ubuntu"
+                              >
+                                <Eye className="w-3.5 h-3.5" />
+                                <span className="text-[11px]">Xem</span>
+                              </button>
+                            </div>
                           </td>
                         </tr>
                       ))
@@ -1180,12 +1201,48 @@ export default function AdminPage() {
               </div>
             )}
 
+            {/* Download Original JD Card */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-[#E0F6FA] border border-[#BCECF3]">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-[#009DAE] text-white flex items-center justify-center font-bold text-lg shadow-sm">
+                  📄
+                </div>
+                <div>
+                  <div className="font-ubuntu font-bold text-slate-900 text-xs sm:text-sm">
+                    {selectedLog.jd_filename || 'Tài Liệu JD Tuyển Dụng'}
+                  </div>
+                  <div className="text-[11px] text-slate-500 font-roboto">
+                    Tệp tin gốc do nhà tuyển dụng ({selectedLog.user_name}) cung cấp
+                  </div>
+                </div>
+              </div>
+              <a
+                href={`/api/admin/download-jd?id=${selectedLog.id}`}
+                download
+                className="btn-teal px-4 py-2 rounded-full text-white text-xs font-bold font-ubuntu inline-flex items-center justify-center gap-1.5 shadow-sm hover:opacity-95 transition-all shrink-0"
+              >
+                <Download className="w-4 h-4" />
+                <span>Tải File JD Gốc Về Máy</span>
+              </a>
+            </div>
+
             {/* JD Text */}
             <div className="space-y-1">
               <div className="text-xs font-bold font-ubuntu text-slate-700 uppercase tracking-wider">Nội Dung JD Đã Upload:</div>
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 max-h-48 overflow-y-auto text-xs text-slate-600 whitespace-pre-wrap font-mono">
-                {selectedLog.jd_text}
-              </div>
+              {isBinaryOrJunkText(selectedLog.jd_text) ? (
+                <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-900 space-y-2">
+                  <div className="font-bold flex items-center gap-1.5 font-ubuntu text-amber-950">
+                    <span>⚠️</span> Tệp tin gốc định dạng nhị phân (.pdf / .docx)
+                  </div>
+                  <p className="text-amber-800 leading-relaxed font-roboto">
+                    File chứa các đối tượng đồ họa và mã hoá nhị phân nguyên bản. Để xem trọn vẹn văn bản với định dạng và bố cục gốc của nhà tuyển dụng, anh vui lòng bấm nút <strong>&quot;Tải File JD Gốc Về Máy&quot;</strong> ở trên.
+                  </p>
+                </div>
+              ) : (
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 max-h-48 overflow-y-auto text-xs text-slate-700 whitespace-pre-wrap font-mono leading-relaxed">
+                  {selectedLog.jd_text}
+                </div>
+              )}
             </div>
 
             <div className="flex justify-end gap-3 pt-3 border-t border-slate-100">
