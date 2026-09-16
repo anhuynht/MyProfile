@@ -35,14 +35,19 @@ export async function POST(request) {
       const arrayBuffer = await file.arrayBuffer();
       const buffer = Buffer.from(arrayBuffer);
       fileBase64 = buffer.toString('base64');
-      extractedJDText = await parseDocument(buffer, file.type, file.name);
+      const parsedText = await parseDocument(buffer, file.type, file.name);
+      if (parsedText && parsedText.trim().length >= 20) {
+        extractedJDText = parsedText.trim();
+      } else if (!extractedJDText) {
+        extractedJDText = parsedText ? parsedText.trim() : '';
+      }
     }
 
-    if (!extractedJDText || extractedJDText.length < 30) {
-      return NextResponse.json(
-        { error: 'Nội dung Job Description quá ngắn hoặc không thể đọc được. Vui lòng tải file PDF/Word hợp lệ hoặc dán trực tiếp nội dung JD.' },
-        { status: 400 }
-      );
+    if (!extractedJDText || extractedJDText.length < 20) {
+      const msg = filename && filename !== 'Direct Input'
+        ? `Không thể trích xuất nội dung văn bản từ tệp "${filename}" (có thể do tệp là bản scan dạng hình ảnh hoặc có bảo vệ mã hóa). Vui lòng thử tải file Word (.docx) hoặc dán trực tiếp nội dung JD vào ô bên dưới.`
+        : 'Nội dung Job Description quá ngắn hoặc không thể đọc được. Vui lòng dán trực tiếp nội dung JD hoặc tải tệp PDF/Word hợp lệ.';
+      return NextResponse.json({ error: msg }, { status: 400 });
     }
 
     // Run AI Matching
