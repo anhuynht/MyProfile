@@ -73,3 +73,30 @@ export async function GET(request) {
     isServerless: Boolean(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME),
   });
 }
+
+export async function POST(request) {
+  const admin = getAdminFromRequest(request);
+  if (!admin) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  const p = getPool();
+  if (!p) {
+    return NextResponse.json({ error: 'No database pool available' }, { status: 500 });
+  }
+
+  const body = await request.json();
+  const { logs } = body;
+
+  let insertedCount = 0;
+  for (const l of logs || []) {
+    await p.query(
+      `INSERT INTO jd_match_logs (user_name, user_email, company_name, job_title, jd_filename, jd_text, match_score, ai_result, ip_address, created_at)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
+      [l.user_name, l.user_email, l.company_name, l.job_title, l.jd_filename, l.jd_text, l.match_score, JSON.stringify(l.ai_result), l.ip_address, l.created_at]
+    );
+    insertedCount++;
+  }
+
+  return NextResponse.json({ success: true, insertedCount });
+}
