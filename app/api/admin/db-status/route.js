@@ -86,14 +86,19 @@ export async function POST(request) {
   }
 
   const body = await request.json();
-  const { logs } = body;
+  const { logs, clearExisting } = body;
+
+  if (clearExisting) {
+    await p.query('TRUNCATE TABLE jd_match_logs RESTART IDENTITY');
+  }
 
   let insertedCount = 0;
   for (const l of logs || []) {
+    const cleanJdText = typeof l.jd_text === 'string' ? l.jd_text.replace(/\0/g, '') : '';
     await p.query(
       `INSERT INTO jd_match_logs (user_name, user_email, company_name, job_title, jd_filename, jd_text, match_score, ai_result, ip_address, created_at)
        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
-      [l.user_name, l.user_email, l.company_name, l.job_title, l.jd_filename, l.jd_text, l.match_score, JSON.stringify(l.ai_result), l.ip_address, l.created_at]
+      [l.user_name, l.user_email, l.company_name, l.job_title, l.jd_filename, cleanJdText, l.match_score, JSON.stringify(l.ai_result), l.ip_address, l.created_at]
     );
     insertedCount++;
   }
