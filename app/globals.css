@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-teal: #009DAE;
+  --color-gold: #FFAF00;
+  --color-pink: #FF4F6E;
+  --background: #FAFBFD;
+}
+
+body {
+  color: #1E293B;
+  background-color: #FAFBFD;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(0, 157, 174, 0.06) 0px, transparent 45%),
+    radial-gradient(at 100% 10%, rgba(255, 79, 110, 0.05) 0px, transparent 40%),
+    radial-gradient(at 50% 60%, rgba(255, 175, 0, 0.04) 0px, transparent 50%),
+    radial-gradient(circle, #E2E8F0 0.8px, transparent 0.8px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px;
+  background-attachment: fixed;
+  font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ubuntu', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F4F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4DCE0;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #009DAE;
+}
+
+/* Design System Buttons */
+.btn-teal {
+  background-color: #009DAE;
+  color: #FFFFFF;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 157, 174, 0.28);
+}
+.btn-teal:hover {
+  background-color: #008392;
+  box-shadow: 0 6px 20px rgba(0, 157, 174, 0.4);
+  transform: translateY(-1px);
+}
+.btn-teal:active {
+  transform: scale(0.98);
+}
+
+.btn-pink {
+  background-color: #FF4F6E;
+  color: #FFFFFF;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(255, 79, 110, 0.28);
+}
+.btn-pink:hover {
+  background-color: #E83D5D;
+  box-shadow: 0 6px 20px rgba(255, 79, 110, 0.4);
+  transform: translateY(-1px);
+}
+.btn-pink:active {
+  transform: scale(0.98);
+}
+
+.btn-gold {
+  background-color: #FFAF00;
+  color: #0F172A;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(255, 175, 0, 0.28);
+}
+.btn-gold:hover {
+  background-color: #E59D00;
+  box-shadow: 0 6px 20px rgba(255, 175, 0, 0.4);
+  transform: translateY(-1px);
+}
+.btn-gold:active {
+  transform: scale(0.98);
+}
+
+/* Hero Pill Action Button (like "Hire Me Now" with pink arrow icon) */
+.btn-hire-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.35rem 1.25rem 0.35rem 0.45rem;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 9999px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #0F172A;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+}
+.btn-hire-pill:hover {
+  border-color: #FF4F6E;
+  box-shadow: 0 6px 22px rgba(255, 79, 110, 0.18);
+  transform: translateY(-1px);
+}
+
+.btn-hire-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  background-color: #FF4F6E;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+.btn-hire-pill:hover .btn-hire-icon {
+  transform: rotate(45deg);
+}
+
+/* Clean White Card */
+.glass-card {
+  background: #FFFFFF;
+  border: 1px solid #E8ECF2;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s ease;
+}
+.glass-card:hover {
+  border-color: #BCECF3;
+  box-shadow: 0 14px 34px -4px rgba(0, 157, 174, 0.12), 0 4px 10px -2px rgba(0, 0, 0, 0.03);
+  transform: translateY(-2px);
+}
+
+/* Section Tag with Pink Accent */
+.section-tag {
+  color: #FF4F6E;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+/* Service / Capability Icon Badges */
+.icon-circle-pink {
+  background: linear-gradient(135deg, #FF4F6E 0%, #FF7893 100%);
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(255, 79, 110, 0.3);
+}
+.icon-circle-gold {
+  background: linear-gradient(135deg, #FFAF00 0%, #FFC333 100%);
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(255, 175, 0, 0.3);
+}
+.icon-circle-teal {
+  background: linear-gradient(135deg, #009DAE 0%, #47CFDF 100%);
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(0, 157, 174, 0.3);
+}
+
+/* Dot Grid Accent Blocks */
+.dot-grid {
+  background-image: radial-gradient(circle, #CBD5E1 1px, transparent 1px);
+  background-size: 10px 10px;
+}

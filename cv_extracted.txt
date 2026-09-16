@@ -1,0 +1,87 @@
+HUYNH THIEN AN
+CHIEF INFORMATION OFFICER | TECHNOLOGY, DIGITAL TRANSFORMATION & AI EXECUTIVE
++84 934 771 264  |  an.huynht@gmail.com  |  linkedin.com/in/huynh-thien-an  |  Ho Chi Minh City, Vietnam
+EXECUTIVE PROFILE
+Technology executive with more than 20 years of experience across insurance, education, healthcare, and enterprise services, leading transformation across core platforms, CRM and ERP, enterprise architecture, integration, cybersecurity, cloud, data, and digital business capabilities. I focus on building trusted technology ecosystems where reliable data, well-designed integrations, secure architecture, and strong governance provide the foundation for sustainable AI adoption and measurable business value.My current focus is enterprise AI strategy and execution, including Generative AI, Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), intelligent document processing, AI assistants for sales and agency channels, and secure local-first AI for privacy-sensitive and regulated environments. Beyond technology delivery, I work closely with Boards, executives, and business teams to build AI capability, strengthen technology leadership, and translate complex transformation into practical outcomes. I believe successful digital transformation depends as much on people, processes, leadership, and execution as it does on technology.
+CORE LEADERSHIP & TECHNOLOGY CAPABILITIES
+Enterprise AI Strategy & Governance
+Digital & Business Transformation
+Generative AI, LLMs & RAG
+AI Assistants & Intelligent Automation
+Enterprise Architecture & Integration
+CRM, ERP & Core Platform Modernization
+Intelligent Document Processing
+Data Strategy & AI Readiness
+Cloud & Local-First AI Deployment
+Cybersecurity, Risk & Compliance
+Technology Leadership & Team Development
+Executive Stakeholder & Vendor Management
+PROFESSIONAL EXPERIENCE
+MAP LIFE INSURANCE (MIRAE ASSET PRÉVOIR VIETNAM)  |  Ho Chi Minh City
+IT Director & CIO  |  May 2026 – Present
+Lead the full technology agenda for a regulated life insurer, spanning IT strategy, enterprise architecture, cybersecurity, infrastructure, data, digital transformation, enterprise AI, CRM, and technology-enabled growth.
+Defined the 2026–2031 IT Roadmap and target enterprise architecture around Unified Core, Microsoft Platform, Private Cloud, and a Central AI Hub; completed current-state architecture and risk/gap assessment.
+Structured the strategic decision for the Life Asia / Wynsure dual-core estate, including 5-year TCO modelling and PAS vendor landscape assessment covering DXC Assure Integral, eBaoTech, and Sapiens.
+Redesigned the cybersecurity architecture around Microsoft Defender and FortiGate, strengthened email and identity security, and led the response to a real Business Email Compromise incident affecting executive and Finance users.
+Led regulatory and compliance analysis covering PDPL, Cybersecurity Law, data localization, cross-border transfer, CII considerations, and AI/deepfake obligations; established security awareness and governance actions.
+Modernized workplace and infrastructure through Microsoft 365 Business Premium, Exchange Online hybrid migration, Entra ID, Conditional Access, Intune, and a refreshed endpoint/security operating model.
+Established the enterprise AI roadmap, including a PDPL-compliant on-premise LLM environment with a staged path to Azure OpenAI private endpoints; designed AI sales-assist and Vietnamese speech-analytics use cases.
+Developed customer segmentation and scoring for approximately 2.4M bancassurance customers, executive sales dashboards, and call-allocation logic for renewal and lapsed-policy campaigns.
+Govern SalesVerse CRM implementation and technology takeover planning, while rebuilding Digital Marketing capabilities under IT to support Referral and B2C growth across web, social, Zalo OA, email, app, and call-center channels.
+XCL EDUCATION GROUP
+Head of Applications  |  Jul 2025 – May 2026
+Directed application strategy, solution architecture, automation, and regional integration for a multi-country education group.
+Led application architecture and automation across Vietnam, Singapore, Malaysia, and Thailand, integrating Salesforce, NetSuite, PowerSchool, Workato, Power Platform, and Azure services.
+Established DevOps and governance practices for group applications, including Power Platform licensing, enterprise solution design, scalability, security, and CI/CD.
+Scaled regional digital solutions including SiriusNex procure-to-pay, Perform360 performance management, SafeJourney school-bus and attendance, and AI-enabled student support.
+Drove AI and workflow automation initiatives to reduce manual processing and improve operational visibility across schools and corporate functions.
+VIETNAM AUSTRALIA INTERNATIONAL SCHOOL (VAS)
+IT Deputy Director  |  Mar 2018 – Jul 2025
+Held broad responsibility for IT service delivery, applications, infrastructure, cybersecurity, enterprise architecture, transformation programs, and business technology enablement.
+Partnered with senior management and campus leaders on IT strategy, annual budget planning, new-campus readiness, architecture, service delivery, and major transformation initiatives.
+Led digital platforms for parent/student experience, admissions, school operations, HR, procurement, leave, attendance, performance management, reporting, and online learning.
+Modernized integration and analytics using Salesforce, NetSuite, Microsoft Power Platform, Microsoft Fabric, Power BI, Google BigQuery, APIs, and workflow automation.
+Led infrastructure and security improvements including cloud migration, SD-WAN, BYOD, Intune/Company Portal, MFA, backup and disaster recovery, security policies, penetration testing, audits, and ISO 27001-aligned gap remediation.
+Played key leadership roles in ERP and SIS programs, including Oracle Fusion Cloud evaluation/implementation, admissions, HCM, finance, procurement, budgeting, timetable, academic reporting, and regional integration.
+Introduced AI-enabled attendance, bus safety, and learning-assistance solutions, and supported business continuity and virtual learning during the COVID-19 period.
+GLOBAL INSURANCE CORPORATION (GIC)
+IT Project Implementation Consultant  |  Mar 2018 – Jun 2019
+Advised the CEO and Group CIO on technology strategy, infrastructure issues, key recruitment, roadmap review, and core-system implementation.
+GLOBAL INSURANCE CORPORATION (GIC)
+IT Director  |  Sep 2015 – Mar 2018
+Owned IT strategy, governance, budget, infrastructure, applications, security, and team leadership for a nationwide general insurer with 18 subsidiaries.
+Developed the 5-year IT and digital transformation strategy approved by the Board, including a multi-million-dollar transformation investment plan.
+Directed new core-system vendor selection and implementation, data-center/server-room centralization, network modernization, and business continuity improvements.
+Enabled new bancassurance and digital distribution initiatives, automated commission management, and supported sales, finance, and operational transformation.
+CITY INTERNATIONAL HOSPITAL
+IT Manager  |  Sep 2013 – Sep 2015
+Led hospital IT operations, HIS, infrastructure, security, backup/disaster recovery, vendor management, and Board reporting.
+Implemented imaging/PACS alternatives with regional teams, generating major cost savings, and supported DOH inspection, KPMG IT audit, risk-control self-assessment, and online billing improvements.
+Served temporarily as Acting Back Office Manager, supporting clinic operations, customer service, finance, and marketing initiatives.
+GREAT EASTERN VIETNAM
+Application Head & Acting Portfolio Head / Business Analysis Manager  |  Sep 2010 – Sep 2013
+Managed business analysis, application development, project management, testing, and portfolio delivery for local and regional life-insurance initiatives.
+Delivered systems for agency compensation, procure-to-pay, customer portals, business illustration, policy administration, premium collection, call recording, and related distribution operations.
+Managed budgets, resource planning, senior-management reporting, security coordination, UAT/SIT, and regulatory documentation for product launches.
+TAT MACHINERY
+IT Director / IT Consultant / Financial Data Analyst  |  2010 – 2012
+Developed IT strategy, implemented SAP Business One, connected multi-city operations, and coached IT teams.
+Later provided advisory support and contributed financial analysis for an international arbitration case.
+STAR LIGHT – TANGO.VN
+Co-founder & IT Manager  |  2008 – 2010
+Co-founded and managed the technology function for an online real-estate marketplace, supporting operations across Ho Chi Minh City, Can Tho, Da Nang, and Hanoi.
+WORLD TRADE B2B
+Founder / Owner  |  2004 – 2006
+Founded and operated a B2B online marketplace connecting businesses with potential trade partners.
+EDUCATION
+MBA, University of Business and International Studies (UBIS), 2019 — Cum Laude, Top 5.
+BSc Information Systems and Management, University of London, 2008 — Second Class Honours.
+AAS, Application Development using Microsoft .NET, Houston Community College System / Saigon Institute of Information Technology, 2004.
+CERTIFICATIONS & PROFESSIONAL DEVELOPMENT
+Professional Scrum Master I (PSM I), Scrum.org.
+Digital Transformation, BCG / University of Virginia (Coursera).
+Accredited Project Management, IO4PM.
+Scrum Fundamentals Certified.
+AWS Cloud Practitioner Essentials.
+SELECTED TECHNOLOGY EXPOSURE
+Microsoft 365, Entra ID, Intune, Defender, Azure, Power Platform, Power BI, Microsoft Fabric, Salesforce, NetSuite, PowerSchool, Workato, Oracle Fusion Cloud, SAP Business One, FortiGate, hybrid cloud, API/integration architecture, RAG/LLM platforms, data analytics, CRM, ERP, PAS/core insurance systems.

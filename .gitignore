@@ -1,0 +1,27 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Testing & Scratch
+/scratch
+*.log
+
+# Next.js build output
+/.next/
+/out/
+
+# Production
+/build
+
+# Local Environment Variables
+.env*.local
+.env
+
+# Local Storage database
+/.data/
+
+# OS Files
+.DS_Store
+*.pem
+Thumbs.db
